@@ -20,6 +20,7 @@
 		9FBF48AC2678805500301C6E /* NewEpisodeStatus+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48AB2678805400301C6E /* NewEpisodeStatus+CoreDataClass.swift */; };
 		9FBF48B02678805B00301C6E /* NewEpisodes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48AF2678805B00301C6E /* NewEpisodes+CoreDataClass.swift */; };
 		9FBF48B42678826300301C6E /* NewEpisodes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48B32678826300301C6E /* NewEpisodes+CoreDataProperties.swift */; };
+		9FBF48CB267B0EBB00301C6E /* SubscriptionStoreCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48CA267B0EBA00301C6E /* SubscriptionStoreCopy.swift */; };
 		B5025C8122DE6E3400DE7481 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8022DE6E3400DE7481 /* EpisodeCell.swift */; };
 		B5025C8322DE717F00DE7481 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8222DE717F00DE7481 /* Episode.swift */; };
 		B5025C8522DE72F100DE7481 /* EpisodeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8422DE72F100DE7481 /* EpisodeCellViewModel.swift */; };
@@ -110,6 +111,7 @@
 		9FBF48AB2678805400301C6E /* NewEpisodeStatus+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewEpisodeStatus+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9FBF48AF2678805B00301C6E /* NewEpisodes+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewEpisodes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9FBF48B32678826300301C6E /* NewEpisodes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewEpisodes+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		9FBF48CA267B0EBA00301C6E /* SubscriptionStoreCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStoreCopy.swift; sourceTree = "<group>"; };
 		B5025C8022DE6E3400DE7481 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		B5025C8222DE717F00DE7481 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		B5025C8422DE72F100DE7481 /* EpisodeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewModel.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				9FBF489E26787A7D00301C6E /* NewSubscriptions.xcdatamodeld */,
 				B5304D0522EB76A60002245D /* SubscriptionStore.swift */,
 				B5149295235A206B00463B60 /* PersistenceManager.swift */,
+				9FBF48CA267B0EBA00301C6E /* SubscriptionStoreCopy.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				B5149298235A26CD00463B60 /* FeedImporter.swift in Sources */,
 				B5CF3EE5223186090010072D /* SearchResult.swift in Sources */,
 				B5149294235A1FA300463B60 /* BaseOperation.swift in Sources */,
+				9FBF48CB267B0EBB00301C6E /* SubscriptionStoreCopy.swift in Sources */,
 				9FBF486C26731D0100301C6E /* APIClientCopy.swift in Sources */,
 				B5025C8322DE717F00DE7481 /* Episode.swift in Sources */,
 				9FBF487D26732CF300301C6E /* PodcastDataManagerCopy.swift in Sources */,
