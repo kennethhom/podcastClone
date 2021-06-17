@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H2" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NewEpisodes" representedClassName="NewEpisodes" syncable="YES">
+        <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="enclosureUrl" attributeType="URI"/>
+        <attribute name="episodeDescription" attributeType="String"/>
+        <attribute name="identifier" attributeType="String"/>
+        <attribute name="publicationDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="episodeStatus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewEpisodeStatus" inverseName="episodes" inverseEntity="NewEpisodeStatus"/>
+        <relationship name="podcast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewPodcast" inverseName="episodes" inverseEntity="NewPodcast"/>
+    </entity>
+    <entity name="NewEpisodeStatus" representedClassName="NewEpisodeStatus" syncable="YES" codeGenerationType="category">
+        <attribute name="hasCompleted" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isCurrentlyPlaying" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="lastListenedTime" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lastPlayedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="episodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NewEpisodes" inverseName="episodeStatus" inverseEntity="NewEpisodes"/>
+    </entity>
+    <entity name="NewPodcast" representedClassName="NewPodcast" syncable="YES" codeGenerationType="category">
+        <attribute name="artworkURLString" optional="YES" attributeType="String"/>
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="feedURLString" attributeType="String"/>
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="podcastDescription" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="NewEpisodes" inverseName="podcast" inverseEntity="NewEpisodes"/>
+        <relationship name="subscription" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NewSubscription" inverseName="podcast" inverseEntity="NewSubscription"/>
+    </entity>
+    <entity name="NewSubscription" representedClassName="NewSubscription" syncable="YES" codeGenerationType="category">
+        <attribute name="dateSubscribed" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="podcast" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NewPodcast" inverseName="subscription" inverseEntity="NewPodcast"/>
+    </entity>
+    <elements>
+        <element name="NewSubscription" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="NewPodcast" positionX="-54" positionY="-9" width="128" height="178"/>
+        <element name="NewEpisodes" positionX="-36" positionY="9" width="128" height="163"/>
+        <element name="NewEpisodeStatus" positionX="-18" positionY="27" width="128" height="118"/>
+    </elements>
+</model>
