@@ -23,7 +23,8 @@ class Podcast {
         self.feedURL = feedURL
     }
 
-    init(from entity: PodcastEntity) {
+    init(from entity: NewPodcast) {
+//    init(from entity: PodcastEntity) {
         id = entity.id!
         feedURL = URL(string: entity.feedURLString!)!
         title = entity.title

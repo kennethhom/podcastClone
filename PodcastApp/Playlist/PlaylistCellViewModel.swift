@@ -9,7 +9,8 @@
 import Foundation
 
 struct PlaylistCellViewModel : Hashable {
-    private let episode: EpisodeEntity
+//    private let episode: EpisodeEntity
+    private let episode: NewEpisodes
 
     private static var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -24,7 +25,8 @@ struct PlaylistCellViewModel : Hashable {
         return formatter
     }()
 
-    init(episode: EpisodeEntity) {
+    init(episode: NewEpisodes) {
+//    init(episode: EpisodeEntity) {
         self.episode = episode
     }
 

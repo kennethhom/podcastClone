@@ -8,7 +8,7 @@
 
 import Foundation
 import CoreData
-
+/*
 class SubscriptionStore {
 
     private let context: NSManagedObjectContext
@@ -122,3 +122,4 @@ class SubscriptionStore {
     }
 
 }
+*/

@@ -78,16 +78,16 @@ class ImportEpisodesOperation : BaseOperation {
     }
 
     private func saveChanges() {
-        context.performAndWait {
+        context.perform { [weak self] in
             do {
-                try context.save()
+                try self?.context.save()
             } catch {
                 print("Error saving changes: \(error.localizedDescription)")
             }
         }
     }
-
-    private func loadPodcast() -> PodcastEntity? {
+    
+    private func loadPodcast() -> NewPodcast? {
         do {
             guard let podcast = try subscriptionStore.findPodcast(with: podcastId) else {
                 print("Couldn't find podcast with id: \(podcastId)")
@@ -100,10 +100,10 @@ class ImportEpisodesOperation : BaseOperation {
         }
     }
 
-    private func importEpisodes(_ episodes: [Episode], podcast: PodcastEntity) {
-        var existingEpisodes = [String : EpisodeEntity]()
+    private func importEpisodes(_ episodes: [Episode], podcast: NewPodcast) {
+        var existingEpisodes = [String : NewEpisodes]()
         podcast.episodes?
-            .map { $0 as! EpisodeEntity }
+            .map { $0 as! NewEpisodes }
             .forEach {
                 existingEpisodes[$0.identifier] = $0
             }
@@ -119,16 +119,60 @@ class ImportEpisodesOperation : BaseOperation {
                 continue
             }
 
-            let episodeEntity = existingEpisodes[episodeId] ?? EpisodeEntity(context: context)
+            let episodeEntity = existingEpisodes[episodeId] ?? NewEpisodes(context: context)
             episodeEntity.identifier = episodeId
             episodeEntity.podcast = podcast
             episodeEntity.title = episode.title ?? "Untitled"
             episodeEntity.publicationDate = episode.publicationDate ?? Date()
             episodeEntity.duration = episode.duration ?? 0
             episodeEntity.episodeDescription = episode.description ?? ""
-            episodeEntity.enclosureURL = enclosureURL
+            episodeEntity.enclosureUrl = enclosureURL
 
           //  print("Importing [\(podcast.title ?? "")] \(episodeEntity.title)...")
         }
+
+//    private func loadPodcast() -> PodcastEntity? {
+//        do {
+//            guard let podcast = try subscriptionStore.findPodcast(with: podcastId) else {
+//                print("Couldn't find podcast with id: \(podcastId)")
+//                return nil
+//            }
+//            return podcast
+//        } catch {
+//            print("Error fetching podcast: \(error.localizedDescription)")
+//            return nil
+//        }
+//    }
+//
+//    private func importEpisodes(_ episodes: [Episode], podcast: PodcastEntity) {
+//        var existingEpisodes = [String : EpisodeEntity]()
+//        podcast.episodes?
+//            .map { $0 as! EpisodeEntity }
+//            .forEach {
+//                existingEpisodes[$0.identifier] = $0
+//            }
+//
+//        for episode in episodes {
+//            guard let episodeId = episode.identifier else {
+//                print("Skipping episode \(episode.title ?? "<?>") because it has no identifier")
+//                continue
+//            }
+//
+//            guard let enclosureURL = episode.enclosureURL else {
+//                print("Skipping episode \(episode.title ?? "<?>") because it has no enclosure")
+//                continue
+//            }
+//
+//            let episodeEntity = existingEpisodes[episodeId] ?? EpisodeEntity(context: context)
+//            episodeEntity.identifier = episodeId
+//            episodeEntity.podcast = podcast
+//            episodeEntity.title = episode.title ?? "Untitled"
+//            episodeEntity.publicationDate = episode.publicationDate ?? Date()
+//            episodeEntity.duration = episode.duration ?? 0
+//            episodeEntity.episodeDescription = episode.description ?? ""
+//            episodeEntity.enclosureURL = enclosureURL
+//
+//          //  print("Importing [\(podcast.title ?? "")] \(episodeEntity.title)...")
+//        }
     }
 }

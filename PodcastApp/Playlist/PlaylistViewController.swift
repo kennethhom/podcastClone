@@ -17,7 +17,8 @@ class PlaylistViewController : UITableViewController {
     }
 
     private var datasource: UITableViewDiffableDataSource<Section, PlaylistCellViewModel>!
-    private var fetchedResultsController: NSFetchedResultsController<EpisodeEntity>!
+//    private var fetchedResultsController: NSFetchedResultsController<EpisodeEntity>!
+    private var fetchedResultsController: NSFetchedResultsController<NewEpisodes>!
     private var needsSnapshotUpdate = false
 
     override func viewDidLoad() {

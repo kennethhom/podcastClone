@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		9FBF48B02678805B00301C6E /* NewEpisodes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48AF2678805B00301C6E /* NewEpisodes+CoreDataClass.swift */; };
 		9FBF48B42678826300301C6E /* NewEpisodes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48B32678826300301C6E /* NewEpisodes+CoreDataProperties.swift */; };
 		9FBF48CB267B0EBB00301C6E /* SubscriptionStoreCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48CA267B0EBA00301C6E /* SubscriptionStoreCopy.swift */; };
+		B231673F267C6F8C00491658 /* ImportEpisodesOperationCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231673E267C6F8C00491658 /* ImportEpisodesOperationCopy.swift */; };
 		B5025C8122DE6E3400DE7481 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8022DE6E3400DE7481 /* EpisodeCell.swift */; };
 		B5025C8322DE717F00DE7481 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8222DE717F00DE7481 /* Episode.swift */; };
 		B5025C8522DE72F100DE7481 /* EpisodeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8422DE72F100DE7481 /* EpisodeCellViewModel.swift */; };
@@ -112,6 +113,7 @@
 		9FBF48AF2678805B00301C6E /* NewEpisodes+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewEpisodes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9FBF48B32678826300301C6E /* NewEpisodes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewEpisodes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9FBF48CA267B0EBA00301C6E /* SubscriptionStoreCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStoreCopy.swift; sourceTree = "<group>"; };
+		B231673E267C6F8C00491658 /* ImportEpisodesOperationCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportEpisodesOperationCopy.swift; sourceTree = "<group>"; };
 		B5025C8022DE6E3400DE7481 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		B5025C8222DE717F00DE7481 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		B5025C8422DE72F100DE7481 /* EpisodeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewModel.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				B5149293235A1FA300463B60 /* BaseOperation.swift */,
 				B5149291235A1F9100463B60 /* ImportEpisodesOperation.swift */,
+				B231673E267C6F8C00491658 /* ImportEpisodesOperationCopy.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -563,18 +566,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PodcastApp/Pods-PodcastApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/FeedKit/FeedKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PodcastApp/Pods-PodcastApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FeedKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-PodcastApp/Pods-PodcastApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -628,6 +624,7 @@
 				B5149292235A1F9100463B60 /* ImportEpisodesOperation.swift in Sources */,
 				9FBF48B02678805B00301C6E /* NewEpisodes+CoreDataClass.swift in Sources */,
 				B5B8D8322295B22F00BABE44 /* SeparatorView.swift in Sources */,
+				B231673F267C6F8C00491658 /* ImportEpisodesOperationCopy.swift in Sources */,
 				B58516BB233CF6C00061BE1B /* TypedNotifications.swift in Sources */,
 				B5EA9B6C228B06520018A804 /* GradientBackgroundView.swift in Sources */,
 				B5DA55D72385C29800C058AE /* EpisodeStatusEntity+CoreDataClass.swift in Sources */,

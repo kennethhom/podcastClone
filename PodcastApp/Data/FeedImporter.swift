@@ -14,14 +14,14 @@ class FeedImporter {
     private var notificationObserver: NSObjectProtocol?
     private var priorityQueue: OperationQueue = {
         let q = OperationQueue()
-        q.maxConcurrentOperationCount = 2
+        q.maxConcurrentOperationCount = -1
         q.qualityOfService = .userInitiated
         return q
     }()
 
     private var backgroundQueue: OperationQueue = {
         let q = OperationQueue()
-        q.maxConcurrentOperationCount = 2
+        q.maxConcurrentOperationCount = -1
         q.qualityOfService = .background
         return q
     }()
@@ -29,7 +29,7 @@ class FeedImporter {
     func startListening() {
         notificationObserver = NotificationCenter.default.addObserver(SubscriptionsChanged.self, sender: nil, queue: nil) { notification in
             notification.subscribedIds.forEach(self.onSubscribe)
-            notification.unsubscribedIds.forEach(self.onUnsubscribe)
+//            notification.unsubscribedIds.forEach(self.onUnsubscribe)
         }
     }
 
@@ -43,7 +43,8 @@ class FeedImporter {
                     guard let podcast = sub.podcast else { continue }
                     guard let id = podcast.id else { continue }
                     print("Queueing operation to update subscribed podcast: \(podcast.title ?? "?")")
-                    let updateOperation = ImportEpisodesOperation(podcastId: id, priority: .background)
+//                    let updateOperation = ImportEpisodesOperation(podcastId: id, priority: .background)
+                    let updateOperation = ImportEpisodesOperationCopy(podcastId: id, priority: .background)
                     self.backgroundQueue.addOperation(updateOperation)
                 }
             } catch {
@@ -53,12 +54,13 @@ class FeedImporter {
     }
 
     private func onSubscribe(podcastId: String) {
-        let operation = ImportEpisodesOperation(podcastId: podcastId, priority: .userInitiated)
+//        let operation = ImportEpisodesOperation(podcastId: podcastId, priority: .userInitiated)
+        let operation = ImportEpisodesOperationCopy(podcastId: podcastId, priority: .userInitiated)
         priorityQueue.addOperation(operation)
     }
 
-    private func onUnsubscribe(podcastId: String) {
-
-    }
+//    private func onUnsubscribe(podcastId: String) {
+//
+//    }
 }
 

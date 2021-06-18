@@ -26,7 +26,8 @@ class PersistenceManager {
     }
 
     private init() {
-        persistentContainer = NSPersistentContainer(name: "Subscriptions")
+        persistentContainer = NSPersistentContainer(name: "NewSubscriptions")
+        // persistentContainer = NSPersistentContainer(name: "Subscriptions")
     }
 
     func initializeModel(then completion: @escaping () -> Void) {

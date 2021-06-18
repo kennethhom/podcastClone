@@ -18,7 +18,8 @@ class PlayerViewController : UIViewController {
     private let skipTime = CMTime(seconds: 10, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
 
     private var subscriptionStore: SubscriptionStore!
-    private var episodeStatus: EpisodeStatusEntity?
+    //private var episodeStatus: EpisodeStatusEntity?
+    private var episodeStatus: NewEpisodeStatus?
 
     static var shared: PlayerViewController = {
         let storyboard = UIStoryboard(name: "Player", bundle: nil)
@@ -113,7 +114,7 @@ class PlayerViewController : UIViewController {
         let player = AVPlayer(playerItem: playerItem)
         self.player = player
 
-        let time = episodeStatus?.lastListenTime ?? 0
+        let time = episodeStatus?.lastListenedTime ?? 0
         transportSlider.value = 0
         transportSlider.isEnabled = false
         transportSlider.alpha = 0.5
@@ -146,7 +147,7 @@ class PlayerViewController : UIViewController {
         timeObservationToken = player.addPeriodicTimeObserver(forInterval: interval, queue: .main) { [weak self] time in
             self?.updateSlider(for: time)
 
-            self?.episodeStatus?.lastListenTime = time.seconds
+            self?.episodeStatus?.lastListenedTime = time.seconds
 
             self?.timeProgressedLabel.text = time.formattedString
             if let duration = player.currentItem?.duration {

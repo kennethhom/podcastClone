@@ -19,12 +19,13 @@ class Episode {
     init() {        
     }
 
-    init(from entity: EpisodeEntity) {
+    init(from entity: NewEpisodes) {
+    //init(from entity: EpisodeEntity) {
         identifier = entity.identifier
         title = entity.title
         description = entity.episodeDescription
         publicationDate = entity.publicationDate
         duration = entity.duration
-        enclosureURL = entity.enclosureURL
+        enclosureURL = entity.enclosureUrl
     }
 }

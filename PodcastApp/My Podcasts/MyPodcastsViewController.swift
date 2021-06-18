@@ -11,13 +11,15 @@ import UIKit
 class MyPodcastsViewController : PodcastListTableViewController {
 
     private var store: SubscriptionStore!
-    private var subscriptions: [SubscriptionEntity] = [] {
+//    private var subscriptions: [SubscriptionEntity] = [] {
+    private var subscriptions: [NewSubscription] = [] {
         didSet {
             podcasts = subscriptions.compactMap { $0.podcast }
         }
     }
 
-    private var podcasts: [PodcastEntity] = []
+//    private var podcasts: [PodcastEntity] = []
+    private var podcasts: [NewPodcast] = []
     private var subscriptionChangedObserver: NSObjectProtocol?
 
     override func viewDidLoad() {

@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let store = SubscriptionStore(context: PersistenceManager.shared.mainContext)
             do {
                 if let currentStatus = try store.findCurrentlyPlayingEpisode() {
-                    guard let episodeEntity = currentStatus.episode else { return }
+                    guard let episodeEntity = currentStatus.episodes else { return }
                     let podcastEntity = episodeEntity.podcast
 
                     let episode = Episode(from: episodeEntity)
