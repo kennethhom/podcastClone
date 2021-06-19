@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZdQ-M7-fdf">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZdQ-M7-fdf">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +28,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="153 - Negative Mount Pleasant" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFe-Z5-neQ">
-                                <rect key="frame" x="150" y="68" width="114.5" height="36"/>
+                                <rect key="frame" x="150" y="68" width="114" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -61,7 +59,7 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dr7-4N-JVc">
-                                <rect key="frame" x="20" y="524.5" width="36.5" height="17"/>
+                                <rect key="frame" x="20" y="524.5" width="36" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -99,6 +97,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="TcT-Bb-o0g"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="eUH-5a-zyJ" firstAttribute="centerX" secondItem="TcT-Bb-o0g" secondAttribute="centerX" id="3yD-76-pZy"/>
@@ -122,7 +121,6 @@
                             <constraint firstItem="WhJ-ue-6tb" firstAttribute="leading" secondItem="TcT-Bb-o0g" secondAttribute="leading" constant="20" id="zdT-8X-7De"/>
                             <constraint firstItem="QB1-H6-8Cr" firstAttribute="centerX" secondItem="TcT-Bb-o0g" secondAttribute="centerX" id="zry-TX-KdN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="TcT-Bb-o0g"/>
                     </view>
                     <connections>
                         <outlet property="artworkImageView" destination="6Lk-pC-E55" id="rx5-DQ-rFI"/>
@@ -215,6 +213,7 @@
                             <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="16" bottom="0.0" trailing="16"/>
                         </stackView>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="1BL-ar-wiR"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="av2-Jf-upk" firstAttribute="top" secondItem="gTh-Nf-egD" secondAttribute="top" id="Hxb-o5-xbX"/>
@@ -222,7 +221,6 @@
                         <constraint firstAttribute="trailing" secondItem="av2-Jf-upk" secondAttribute="trailing" id="VAO-ai-c8F"/>
                         <constraint firstAttribute="bottom" secondItem="av2-Jf-upk" secondAttribute="bottom" id="sCL-Wu-BFP"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="1BL-ar-wiR"/>
                     <connections>
                         <outlet property="imageView" destination="0MR-tu-8Zb" id="qz4-Ef-BES"/>
                         <outlet property="playPauseButton" destination="ajH-nT-eSR" id="O7J-m3-0Gv"/>

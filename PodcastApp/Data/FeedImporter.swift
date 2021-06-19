@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 class FeedImporter {
     static let shared = FeedImporter()
 
@@ -64,3 +64,4 @@ class FeedImporter {
 //    }
 }
 
+*/

@@ -24,10 +24,11 @@ extension NotificationCenter : TypedNotificationCenter {
     static var typedNotificationUserInfoKey = "_TypedNotification"
 
     func post<N>(_ notification: N) where N : TypedNotification {
+        print("the sender is \(notification.sender)")
         post(name: N.notificationName, object: notification.sender,
              userInfo: [
                 NotificationCenter.typedNotificationUserInfoKey : notification
-        ])
+        ]) 
     }
 
     func addObserver<N>(_ forType: N.Type, sender: N.Sender?, queue: OperationQueue?, using block: @escaping (N) -> Void) -> NSObjectProtocol where N : TypedNotification {

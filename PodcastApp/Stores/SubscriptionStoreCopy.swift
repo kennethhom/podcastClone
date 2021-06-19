@@ -41,7 +41,7 @@ class SubscriptionStore {
         return try context.fetch(fetch)
     }
     
-    @discardableResult func subscribe(to podcast: Podcast) throws -> NewSubscription {
+    @discardableResult func subscribe(to podcast: Podcast, sender: Any?) throws -> NewSubscription {
         let newPodcast = NewPodcast(context: context)
         newPodcast.artworkURLString = podcast.artworkURL?.absoluteString
         newPodcast.author = podcast.author
@@ -57,18 +57,20 @@ class SubscriptionStore {
         
         try context.save()
         
-        let changed = SubscriptionsChanged(subscribed: [podcast.id])
+        var changed = SubscriptionsChanged(subscribed: [podcast.id])
+        changed.sender = sender
         NotificationCenter.default.post(changed)
         return newSubscription
     }
     
-    func unsubscribe(from podcast: Podcast) throws {
+    func unsubscribe(from podcast: Podcast, sender: Any?) throws {
         guard let subscription = try findSubscription(with: podcast.id) else {
             return
         }
         context.delete(subscription)
         try context.save()
-        let changed = SubscriptionsChanged(unsubscribed: [podcast.id])
+        var changed = SubscriptionsChanged(unsubscribed: [podcast.id])
+        changed.sender = sender
         NotificationCenter.default.post(changed)
     }
     

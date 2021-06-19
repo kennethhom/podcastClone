@@ -153,9 +153,9 @@ class PodcastDetailViewController : UITableViewController {
         do {
 
             if isSubscribing {
-                try store.subscribe(to: podcast)
+                try store.subscribe(to: podcast, sender: sender)
             } else {
-                try store.unsubscribe(from: podcast)
+                try store.unsubscribe(from: podcast, sender: sender)
             }
             sender.isSelected.toggle()
         } catch {

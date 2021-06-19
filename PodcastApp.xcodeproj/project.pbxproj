@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		9FBF48B02678805B00301C6E /* NewEpisodes+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48AF2678805B00301C6E /* NewEpisodes+CoreDataClass.swift */; };
 		9FBF48B42678826300301C6E /* NewEpisodes+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48B32678826300301C6E /* NewEpisodes+CoreDataProperties.swift */; };
 		9FBF48CB267B0EBB00301C6E /* SubscriptionStoreCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48CA267B0EBA00301C6E /* SubscriptionStoreCopy.swift */; };
+		9FBF48DD267D454F00301C6E /* FeedImporterCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48DC267D454F00301C6E /* FeedImporterCopy.swift */; };
+		9FBF48F1267D5EA500301C6E /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBF48F0267D5EA400301C6E /* PlayerManager.swift */; };
 		B231673F267C6F8C00491658 /* ImportEpisodesOperationCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B231673E267C6F8C00491658 /* ImportEpisodesOperationCopy.swift */; };
 		B5025C8122DE6E3400DE7481 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8022DE6E3400DE7481 /* EpisodeCell.swift */; };
 		B5025C8322DE717F00DE7481 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5025C8222DE717F00DE7481 /* Episode.swift */; };
@@ -113,6 +115,8 @@
 		9FBF48AF2678805B00301C6E /* NewEpisodes+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewEpisodes+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9FBF48B32678826300301C6E /* NewEpisodes+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewEpisodes+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9FBF48CA267B0EBA00301C6E /* SubscriptionStoreCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionStoreCopy.swift; sourceTree = "<group>"; };
+		9FBF48DC267D454F00301C6E /* FeedImporterCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImporterCopy.swift; sourceTree = "<group>"; };
+		9FBF48F0267D5EA400301C6E /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		B231673E267C6F8C00491658 /* ImportEpisodesOperationCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportEpisodesOperationCopy.swift; sourceTree = "<group>"; };
 		B5025C8022DE6E3400DE7481 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		B5025C8222DE717F00DE7481 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				B5149297235A26CD00463B60 /* FeedImporter.swift */,
 				9FBF487C26732CF300301C6E /* PodcastDataManagerCopy.swift */,
 				9FBF48862674772000301C6E /* PodcastFeedLoaderCopy.swift */,
+				9FBF48DC267D454F00301C6E /* FeedImporterCopy.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -225,9 +230,9 @@
 		B50BA642228202FA006B3010 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B56610A722DFCEC100AE4CE4 /* PodcastLookupInfo.swift */,
 				B50BA64322820301006B3010 /* Podcast.swift */,
 				B5025C8222DE717F00DE7481 /* Episode.swift */,
-				B56610A722DFCEC100AE4CE4 /* PodcastLookupInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -437,6 +442,7 @@
 				B5E6196F22FC86D1007D69CB /* Player.storyboard */,
 				B5E6197122FC86DC007D69CB /* PlayerViewController.swift */,
 				B582298E2316DE6F00A305DD /* PlayerBar.swift */,
+				9FBF48F0267D5EA400301C6E /* PlayerManager.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -566,11 +572,18 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PodcastApp/Pods-PodcastApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PodcastApp/Pods-PodcastApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FeedKit/FeedKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-PodcastApp/Pods-PodcastApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FeedKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -645,6 +658,7 @@
 				B5CF3ECE2231784F0010072D /* AppDelegate.swift in Sources */,
 				9FBF487926732C8000301C6E /* TopPodcastsAPICopy.swift in Sources */,
 				B5CF3EEA223188060010072D /* ReusableView.swift in Sources */,
+				9FBF48F1267D5EA500301C6E /* PlayerManager.swift in Sources */,
 				B558DA3022CD1CDA0050A41D /* PodcastDataManager.swift in Sources */,
 				B56610A622DFC98B00AE4CE4 /* String+HTML.swift in Sources */,
 				B56E2A8022721E380023EB2C /* APIClient.swift in Sources */,
@@ -680,6 +694,7 @@
 				9FBF4875267329AA00301C6E /* PodcastSearchAPICopy.swift in Sources */,
 				B5E6197422FC9F07007D69CB /* CMTime+formattedString.swift in Sources */,
 				B544F7562344E92E00A8DC38 /* MyPodcastsViewController.swift in Sources */,
+				9FBF48DD267D454F00301C6E /* FeedImporterCopy.swift in Sources */,
 				B53213E5237DA13300F06ADD /* PlaylistCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

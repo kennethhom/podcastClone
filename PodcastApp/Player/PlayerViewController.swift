@@ -12,6 +12,8 @@ import AVFoundation
 
 class PlayerViewController : UIViewController {
 
+    
+    private var playerManager = PlayerManager()
     private var player: AVPlayer?
     private var timeObservationToken: Any?
     private var statusObservationToken: Any?
@@ -85,9 +87,8 @@ class PlayerViewController : UIViewController {
     }
 
     func setEpisode(_ episode: Episode, podcast: Podcast, autoPlay: Bool = true) {
-        getEpisodeStatus(for: episode)
         updateUI(for: episode, podcast: podcast)
-
+        getEpisodeStatus(for: episode)
         guard let audioURL = episode.enclosureURL else { return }
         beginAudioSession()
         cleanupPlayerState()
